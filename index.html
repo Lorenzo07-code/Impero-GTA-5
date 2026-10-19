@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#102b52">
+<meta name="description" content="Gestisci il valore del tuo impero su GTA Online.">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<title>Il tuo impero — GTA Online</title>
+<style>
+:root{--navy:#102b52;--navy2:#174778;--sky:#8fd3ff;--sky2:#b9e6ff;--gold:#D4AF37;--ink:#153b60;--muted:#52718e;--line:#d9e8f5;--activity:#e8f4ff;--property:#f0edff;--vehicle:#e8f9ef;--weapon:#fff0e5;--shadow:0 12px 30px rgba(20,55,92,.10)}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(180deg,#eaf4fc 0,#f7fbff 38%,#f5f9fd 100%);font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);min-height:100vh}button,input,select{font:inherit}button{cursor:pointer}.app{max-width:720px;margin:0 auto;padding:16px 14px 36px}
+.hero{background:linear-gradient(135deg,var(--navy),#174778);color:var(--sky);border-radius:28px;padding:25px 22px 23px;box-shadow:0 18px 38px rgba(16,43,82,.2);position:relative;overflow:hidden}.hero:after{content:"";position:absolute;width:210px;height:210px;border:1px solid rgba(143,211,255,.14);border-radius:50%;right:-75px;top:-80px;box-shadow:0 0 0 25px rgba(143,211,255,.035),0 0 0 55px rgba(143,211,255,.025)}.brand{font-size:12px;font-weight:800;letter-spacing:2.2px;text-transform:uppercase;display:flex;gap:9px;align-items:center}.crown{font-size:25px;color:var(--gold)}h1{font-size:clamp(25px,7vw,36px);line-height:1.1;margin:13px 0 7px;color:var(--sky);letter-spacing:.4px}.subtitle{font-size:11px;letter-spacing:1.6px;font-weight:700;color:var(--sky2);opacity:.9}.total-label{margin-top:27px;color:var(--sky2);font-size:12px;font-weight:700;letter-spacing:.5px}.total{font-size:clamp(31px,8vw,45px);font-weight:850;letter-spacing:-1.3px;margin:3px 0 0;color:var(--sky);font-variant-numeric:tabular-nums;overflow-wrap:anywhere}.dollar{color:var(--gold)!important}.total-line{display:flex;align-items:baseline;gap:5px}.total-line .dollar{font-size:clamp(31px,8vw,45px);font-weight:850}.registered{font-size:12px;color:var(--sky2);margin-top:4px}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:12px;margin:25px 3px 13px}.section-head h2{font-size:20px;color:#1c4d7b;margin:0}.section-head p{margin:4px 0 0;color:var(--muted);font-size:12px}.count{font-size:11px;font-weight:800;color:#2a6699;background:#dcefff;padding:7px 10px;border-radius:999px;white-space:nowrap}
+.cards{display:flex;flex-direction:column;gap:12px}.category{border:1px solid var(--line);border-radius:20px;overflow:hidden;background:#fff;box-shadow:var(--shadow);min-width:0}.category-button{width:100%;border:0;text-align:left;background:transparent;padding:15px;display:flex;align-items:center;gap:12px;color:#2c689b}.category-button:focus-visible,.btn:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #56b8ff;outline-offset:2px}.emoji{width:48px;height:48px;border-radius:15px;display:grid;place-items:center;font-size:24px;flex-shrink:0}.category[data-cat="attivita"] .emoji{background:var(--activity)}.category[data-cat="immobili"] .emoji{background:var(--property)}.category[data-cat="veicoli"] .emoji{background:var(--vehicle)}.category[data-cat="armi"] .emoji{background:var(--weapon)}.cat-text{min-width:0;flex:1}.cat-name{font-weight:800;font-size:14px;color:#2c689b}.cat-total{font-size:19px;font-weight:850;color:#397eae;margin-top:3px;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}.chevron{font-size:18px;color:#6fa9d3;transition:transform .18s}.category.open .chevron{transform:rotate(180deg)}.details{display:none;border-top:1px solid var(--line);padding:12px 14px 14px;background:#fbfdff}.category.open .details{display:block}.empty{font-size:13px;color:#6c849a;padding:5px 1px 10px}.item{display:flex;gap:10px;align-items:flex-start;justify-content:space-between;padding:10px 0;border-bottom:1px solid #eaf1f7}.item:last-of-type{border-bottom:0}.item-name{font-size:13px;font-weight:650;color:#2b5d87;overflow-wrap:anywhere}.item-price{font-size:13px;font-weight:800;color:#4d91c4;white-space:nowrap;display:flex;gap:4px}.item-actions{display:flex;gap:5px;margin-top:6px;flex-wrap:wrap}.mini{border:1px solid #cfe2f2;background:#fff;color:#3878aa;border-radius:8px;padding:5px 8px;font-size:11px;font-weight:700}.mini.delete{color:#b44949;border-color:#f0d1d1}.detail-footer{display:flex;justify-content:flex-end;margin-top:11px}.close-cat{background:#e7f3fd;border:0;border-radius:10px;color:#3878aa;font-weight:750;font-size:12px;padding:8px 11px}.bottom-actions{display:flex;gap:10px;margin-top:16px}.btn{border:0;border-radius:13px;padding:12px 14px;font-size:13px;font-weight:800}.primary{background:#174778;color:var(--sky2);box-shadow:0 6px 15px rgba(23,71,120,.15);flex:1}.secondary{background:#e4f2ff;color:#2f6f9f}.tools{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}.tools .btn{width:100%}.footnote{text-align:center;color:#7790a5;font-size:11px;line-height:1.5;margin:20px 12px 0}
+dialog{width:min(460px,calc(100% - 26px));border:1px solid #d6e6f3;border-radius:22px;padding:0;box-shadow:0 25px 80px rgba(10,35,65,.3);color:var(--ink)}dialog::backdrop{background:rgba(8,26,49,.55);backdrop-filter:blur(3px)}.modal-head{background:var(--navy);color:var(--sky);padding:18px 20px;font-weight:850;font-size:18px}.modal-body{padding:18px 20px 20px}.field{display:block;margin-bottom:14px}.field span{display:block;font-size:12px;font-weight:800;color:#47749a;margin-bottom:6px}.field input,.field select{width:100%;border:1px solid #cddfed;border-radius:11px;padding:12px;background:#fbfdff;color:#214e76}.modal-actions{display:flex;gap:9px;margin-top:18px}.modal-actions .btn{flex:1}.danger-note{font-size:12px;color:#7a8fa2;line-height:1.5}.toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);background:#102b52;color:#b9e6ff;padding:11px 16px;border-radius:12px;font-size:13px;font-weight:750;box-shadow:var(--shadow);z-index:20;display:none;max-width:90vw;text-align:center}
+@media(max-width:390px){.hero{padding:22px 19px}.category-button{padding:13px}.bottom-actions{flex-direction:column}}
+</style>
+</head>
+<body>
+<div class="app">
+<header class="hero">
+  <div class="brand"><span class="crown">♛</span><span>IL TUO IMPERO</span></div>
+  <h1>VALORE IMPERO</h1><div class="subtitle">LOS SANTOS · GESTIONE PATRIMONIO</div>
+  <div class="total-label">VALORE TOTALE</div>
+  <div class="total-line"><span class="dollar">$</span><span class="total" id="grandTotal">4.222.250</span></div>
+  <div class="registered">Patrimonio registrato</div>
+</header>
+<div class="section-head"><div><h2>Le tue proprietà</h2><p>Tocca una categoria per vedere gli acquisti</p></div><div class="count" id="itemCount">3 CATEGORIE ATTIVE</div></div>
+<main class="cards" id="categories"></main>
+<div class="bottom-actions"><button class="btn primary" id="addBtn">＋ Aggiungi acquisto</button><button class="btn secondary" id="closeAllBtn">Chiudi tutte le categorie</button></div>
+<div class="tools"><button class="btn secondary" id="exportBtn">Esporta backup</button><button class="btn secondary" id="importBtn">Importa backup</button></div>
+<p class="footnote">I dati vengono salvati su questo dispositivo. Esporta periodicamente un backup per non perderli se cancelli i dati del browser o cambi telefono.</p>
+</div>
+<dialog id="itemDialog"><form id="itemForm"><div class="modal-head" id="dialogTitle">Aggiungi acquisto</div><div class="modal-body">
+<label class="field"><span>Categoria</span><select id="itemCategory" required><option value="attivita">Attività</option><option value="immobili">Immobili</option><option value="veicoli">Veicoli</option><option value="armi">Armi</option></select></label>
+<label class="field"><span>Nome dell'acquisto</span><input id="itemName" maxlength="100" placeholder="Es. Ufficio CEO" required></label>
+<label class="field"><span>Prezzo ($)</span><input id="itemPrice" type="number" min="0" step="1" placeholder="Es. 2250000" required></label>
+<div class="danger-note">Inserisci il prezzo in dollari senza punti o simboli. Il totale si aggiorna automaticamente.</div>
+<div class="modal-actions"><button type="button" class="btn secondary" id="cancelBtn">Annulla</button><button type="submit" class="btn primary">Salva acquisto</button></div>
+</div></form></dialog>
+<input id="backupFile" type="file" accept="application/json,.json" hidden><div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+(()=>{
+const STORAGE_KEY='imperoGtaLedger_v1';
+const categories=[{id:'attivita',name:'Attività',emoji:'🏭'},{id:'immobili',name:'Immobili',emoji:'🏠'},{id:'veicoli',name:'Veicoli',emoji:'🚘'},{id:'armi',name:'Armi',emoji:'🔫'}];
+const initial=[
+{id:'seed-1',category:'attivita',name:'Ufficio CEO',price:2250000},
+{id:'seed-2',category:'attivita',name:'Laboratorio di cocaina',price:1462500},
+{id:'seed-3',category:'immobili',name:'Clubhouse — 1778 Hawick Avenue',price:495000},
+{id:'seed-4',category:'armi',name:'Carabina speciale',price:14750}
+];
+let items=loadItems(),editingId=null;
+const $=id=>document.getElementById(id);
+const number=n=>Math.round(n).toLocaleString('it-IT');
+const money=n=>number(n);
+function loadItems(){try{const saved=localStorage.getItem(STORAGE_KEY);if(!saved)return initial.map(x=>({...x}));const parsed=JSON.parse(saved);if(!Array.isArray(parsed)||!parsed.every(x=>x&&typeof x.name==='string'&&Number.isFinite(Number(x.price))&&categories.some(c=>c.id===x.category)))throw Error();return parsed.map(x=>({...x,price:Number(x.price)}))}catch(e){return initial.map(x=>({...x}))}}
+function save(){try{localStorage.setItem(STORAGE_KEY,JSON.stringify(items))}catch(e){showToast('Salvataggio locale non disponibile in questo browser')}}
+function total(list){return list.reduce((sum,item)=>sum+Number(item.price||0),0)}
+function makeDollar(){const s=document.createElement('span');s.className='dollar';s.textContent='$';return s}
+function render(){
+ $('grandTotal').textContent=number(total(items));
+ const active=categories.filter(c=>items.some(i=>i.category===c.id)).length;
+ $('itemCount').textContent=active+(active===1?' CATEGORIA ATTIVA':' CATEGORIE ATTIVE');
+ const container=$('categories');container.replaceChildren();
+ categories.forEach(cat=>{
+  const list=items.filter(i=>i.category===cat.id),card=document.createElement('section');
+  card.className='category';card.dataset.cat=cat.id;
+  const toggle=document.createElement('button');toggle.className='category-button';toggle.type='button';toggle.setAttribute('aria-expanded','false');
+  const emoji=document.createElement('span');emoji.className='emoji';emoji.textContent=cat.emoji;
+  const text=document.createElement('span');text.className='cat-text';
+  const catName=document.createElement('span');catName.className='cat-name';catName.textContent=cat.name;
+  const catTotal=document.createElement('span');catTotal.className='cat-total';catTotal.append(makeDollar(),document.createTextNode(number(total(list))));
+  catTotal.style.display='flex';catTotal.style.gap='4px';catTotal.style.alignItems='baseline';
+  const chev=document.createElement('span');chev.className='chevron';chev.textContent='⌄';
+  text.append(catName,document.createElement('br'),catTotal);toggle.append(emoji,text,chev);
+  const details=document.createElement('div');details.className='details';const itemsDiv=document.createElement('div');
+  if(!list.length){const empty=document.createElement('div');empty.className='empty';empty.textContent='Nessun acquisto registrato.';itemsDiv.append(empty)}
+  list.forEach(item=>{
+   const row=document.createElement('div');row.className='item';const left=document.createElement('div');left.style.minWidth='0';left.style.flex='1';
+   const nm=document.createElement('div');nm.className='item-name';nm.textContent=item.name;
+   const actions=document.createElement('div');actions.className='item-actions';
+   const edit=document.createElement('button');edit.className='mini';edit.type='button';edit.textContent='Modifica';edit.addEventListener('click',()=>openEdit(item.id));
+   const del=document.createElement('button');del.className='mini delete';del.type='button';del.textContent='Elimina';del.addEventListener('click',()=>deleteItem(item.id));
+   actions.append(edit,del);left.append(nm,actions);
+   const price=document.createElement('div');price.className='item-price';price.append(makeDollar(),document.createTextNode(number(item.price)));
+   row.append(left,price);itemsDiv.append(row);
+  });
+  const footer=document.createElement('div');footer.className='detail-footer';const close=document.createElement('button');close.className='close-cat';close.type='button';close.textContent='Chiudi categoria';footer.append(close);
+  details.append(itemsDiv,footer);
+  toggle.addEventListener('click',()=>{const open=card.classList.toggle('open');toggle.setAttribute('aria-expanded',String(open))});
+  close.addEventListener('click',()=>{card.classList.remove('open');toggle.setAttribute('aria-expanded','false')});
+  card.append(toggle,details);container.append(card);
+ });
+}
+function showToast(message){const t=$('toast');t.textContent=message;t.style.display='block';clearTimeout(showToast.timer);showToast.timer=setTimeout(()=>t.style.display='none',2400)}
+function openAdd(category='attivita'){editingId=null;$('dialogTitle').textContent='Aggiungi acquisto';$('itemCategory').value=category;$('itemName').value='';$('itemPrice').value='';$('itemDialog').showModal();$('itemName').focus()}
+function openEdit(id){const item=items.find(x=>x.id===id);if(!item)return;editingId=id;$('dialogTitle').textContent='Modifica acquisto';$('itemCategory').value=item.category;$('itemName').value=item.name;$('itemPrice').value=item.price;$('itemDialog').showModal()}
+function deleteItem(id){const item=items.find(x=>x.id===id);if(!item)return;if(!confirm(`Vuoi eliminare "${item.name}"?`))return;items=items.filter(x=>x.id!==id);save();render();showToast('Acquisto eliminato')}
+$('addBtn').addEventListener('click',()=>openAdd());
+$('closeAllBtn').addEventListener('click',()=>document.querySelectorAll('.category.open').forEach(card=>{card.classList.remove('open');card.querySelector('.category-button').setAttribute('aria-expanded','false')}));
+$('cancelBtn').addEventListener('click',()=>$('itemDialog').close());
+$('itemForm').addEventListener('submit',e=>{
+ e.preventDefault();const name=$('itemName').value.trim(),price=Number($('itemPrice').value),category=$('itemCategory').value;
+ if(!name||!Number.isFinite(price)||price<0){showToast('Controlla nome e prezzo');return}
+ if(editingId){const item=items.find(x=>x.id===editingId);if(item)Object.assign(item,{name,price,category});showToast('Acquisto aggiornato')}
+ else{items.push({id:'item-'+Date.now()+'-'+Math.random().toString(36).slice(2,7),category,name,price});showToast('Acquisto aggiunto')}
+ save();render();$('itemDialog').close();const card=document.querySelector(`.category[data-cat="${category}"]`);if(card){card.classList.add('open');card.querySelector('.category-button').setAttribute('aria-expanded','true')}
+});
+$('exportBtn').addEventListener('click',()=>{
+ const blob=new Blob([JSON.stringify({app:'Il tuo impero — GTA Online',version:1,exportedAt:new Date().toISOString(),items},null,2)],{type:'application/json'});
+ const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='backup-impero-gta.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);showToast('Backup esportato');
+});
+$('importBtn').addEventListener('click',()=>$('backupFile').click());
+$('backupFile').addEventListener('change',async e=>{
+ const file=e.target.files&&e.target.files[0];if(!file)return;
+ try{const data=JSON.parse(await file.text()),incoming=Array.isArray(data)?data:data.items;
+ if(!Array.isArray(incoming)||!incoming.every(x=>x&&typeof x.name==='string'&&Number.isFinite(Number(x.price))&&Number(x.price)>=0&&categories.some(c=>c.id===x.category)))throw Error();
+ if(!confirm(`Importare ${incoming.length} acquisti? I dati attuali verranno sostituiti.`))return;
+ items=incoming.map((x,i)=>({id:String(x.id||('import-'+Date.now()+'-'+i)),category:x.category,name:x.name,price:Number(x.price)}));save();render();showToast('Backup importato')
+ }catch(err){alert('File non valido. Seleziona un backup JSON esportato da questa app.')}finally{e.target.value=''}
+});
+render();
+if('serviceWorker'in navigator&&location.protocol.startsWith('http'))window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));
+})();
+</script>
+</body>
+</html>
